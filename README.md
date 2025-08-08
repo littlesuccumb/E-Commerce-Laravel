@@ -1,66 +1,248 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# E-Commerce Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sebuah aplikasi e-commerce yang dibangun menggunakan Laravel framework dengan fitur lengkap untuk manajemen toko online.
 
-## About Laravel
+## 🚀 Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Untuk Customer
+- **Registrasi & Login** - Sistem autentikasi pengguna
+- **Katalog Produk** - Browse dan pencarian produk
+- **Shopping Cart** - Keranjang belanja dengan update real-time
+- **Checkout** - Proses pembelian yang aman
+- **Order History** - Riwayat pesanan dan tracking
+- **Profil User** - Manajemen data pribadi
+- **Wishlist** - Daftar produk favorit
+- **Review & Rating** - Sistem rating dan review produk
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Untuk Admin
+- **Dashboard Admin** - Panel kontrol administrasi
+- **Manajemen Produk** - CRUD produk, kategori, dan stok
+- **Manajemen Order** - Kelola pesanan dan status pengiriman
+- **Manajemen User** - Kelola data pelanggan
+- **Laporan Penjualan** - Analytics dan reporting
+- **Manajemen Kategori** - Organisasi produk
+- **Pengaturan Web** - Konfigurasi toko
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Teknologi yang Digunakan
 
-## Learning Laravel
+- **Backend**: Laravel 10.x
+- **Frontend**: Blade Template Engine
+- **Database**: MySQL
+- **CSS Framework**: Bootstrap 5 / Vanilla CSS
+- **JavaScript**: jQuery / Alpine.js
+- **Package Manager**: Composer & NPM
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 📋 Persyaratan Sistem
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- MySQL >= 5.7
+- Apache/Nginx Web Server
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🔧 Instalasi
 
-## Laravel Sponsors
+### 1. Clone Repository
+```bash
+git clone https://github.com/littlesuccumb/E-Commerce-Laravel.git
+cd E-Commerce-Laravel
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 2. Install Dependencies
+```bash
+# Install PHP dependencies
+composer install
 
-### Premium Partners
+# Install JavaScript dependencies
+npm install
+npm run dev
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### 3. Konfigurasi Environment
+```bash
+# Copy environment file
+cp .env.example .env
 
-## Contributing
+# Generate application key
+php artisan key:generate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Konfigurasi Database
+Edit file `.env` dan sesuaikan konfigurasi database:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=alproject
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+### 5. Setup Database
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Opsi 1: Import SQL File (Recommended)**
+```bash
+# Buat database baru
+mysql -u root -p -e "CREATE DATABASE alproject;"
 
-## Security Vulnerabilities
+# Import file SQL yang sudah disediakan
+mysql -u root -p alproject < alproject.sql
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Opsi 2: Menggunakan Laravel Migration**
+```bash
+# Jalankan migrasi
+php artisan migrate
 
-## License
+# Jalankan seeder (opsional)
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Storage Link
+```bash
+# Buat symbolic link untuk storage
+php artisan storage:link
+```
+
+### 7. Jalankan Aplikasi
+```bash
+# Development server
+php artisan serve
+```
+
+Buka browser dan akses `http://localhost:8000`
+
+## 🗄️ Struktur Database
+
+### Tabel Utama
+- `users` - Data pengguna (admin & customer)
+- `categories` - Kategori produk
+- `products` - Data produk
+- `orders` - Data pesanan
+- `order_items` - Detail item pesanan
+- `cart` - Keranjang belanja
+- `reviews` - Review dan rating produk
+- `wishlists` - Daftar favorit pengguna
+
+## 🎯 Penggunaan
+
+### Admin Panel
+1. Akses `/admin` untuk masuk ke panel admin
+2. Login menggunakan kredensial admin
+3. Kelola produk, kategori, dan pesanan melalui dashboard
+
+### Customer
+1. Registrasi akun baru atau login
+2. Browse produk dan tambahkan ke keranjang
+3. Checkout dan lakukan pembayaran
+4. Pantau status pesanan di halaman profil
+
+## 🔐 Akun Default
+
+Jika menggunakan seeder, akun default yang tersedia:
+
+**Admin:**
+- Email: `admin@example.com`
+- Password: `password`
+
+**Customer:**
+- Email: `customer@example.com`
+- Password: `password`
+
+## 📝 API Documentation
+
+API endpoints tersedia untuk integrasi:
+
+### Authentication
+- `POST /api/login` - Login user
+- `POST /api/register` - Registrasi user
+- `POST /api/logout` - Logout user
+
+### Products
+- `GET /api/products` - List produk
+- `GET /api/products/{id}` - Detail produk
+- `GET /api/categories` - List kategori
+
+### Orders
+- `POST /api/orders` - Buat pesanan
+- `GET /api/orders` - Riwayat pesanan
+- `GET /api/orders/{id}` - Detail pesanan
+
+## 🧪 Testing
+
+Jalankan unit tests:
+```bash
+# Jalankan semua tests
+php artisan test
+
+# Jalankan test spesifik
+php artisan test --filter ProductTest
+```
+
+## 🚀 Deployment
+
+### Production Setup
+1. Set environment ke production di `.env`:
+```env
+APP_ENV=production
+APP_DEBUG=false
+```
+
+2. Optimize aplikasi:
+```bash
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+php artisan optimize
+```
+
+3. Set permission yang sesuai untuk folder storage dan bootstrap/cache
+
+## 🤝 Kontribusi
+
+1. Fork repository ini
+2. Buat feature branch (`git checkout -b feature/fitur-baru`)
+3. Commit perubahan (`git commit -am 'Menambah fitur baru'`)
+4. Push ke branch (`git push origin feature/fitur-baru`)
+5. Buat Pull Request
+
+## 📄 Lisensi
+
+Project ini menggunakan lisensi MIT. Lihat file [LICENSE](LICENSE) untuk detail.
+
+## 📞 Kontak & Support
+
+- **Developer**: [littlesuccumb](https://github.com/littlesuccumb)
+- **Email**: -
+- **Issues**: [GitHub Issues](https://github.com/littlesuccumb/E-Commerce-Laravel/issues)
+
+## 📸 Screenshots
+
+### Product Catalog
+![Product Catalog](screenshots/catalog.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Shopping Cart
+![Shopping Cart](screenshots/shopping-cart.png)
+
+---
+
+⭐ Jika project ini membantu Anda, jangan lupa berikan star di repository ini!
+
+## 🔄 Changelog
+
+### v1.0.0
+- ✅ Implementasi fitur dasar e-commerce
+- ✅ Panel admin lengkap
+- ✅ Sistem autentikasi
+- ✅ Shopping cart & checkout
+- ✅ Order management
+
+### Upcoming Features
+- 🔄 Payment gateway integration
+- 🔄 Multi-vendor support  
+- 🔄 Advanced analytics
+- 🔄 Mobile app API
+- 🔄 Email notifications
